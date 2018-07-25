@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',TemplateView.as_view(template_name='homepage.html')), #redirge dirctamente a view html
     path('about/', about_views.contact), #llama metodo 'contact' de controlador (views) de app 'about'
-    path('about2/', include('ProyectoPruebaDjango.apps.about.urls')) #otra forma a lo anterior (importa archivo urls de app 'about')
+    path('about_all/', include('ProyectoPruebaDjango.apps.about.urls')) #otra forma a lo anterior (importa archivo urls de app 'about')
 
 ]
