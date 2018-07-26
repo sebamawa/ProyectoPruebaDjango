@@ -1,6 +1,7 @@
 from django.urls import path
-from ProyectoPruebaDjango.apps.about.views import contact
+from ProyectoPruebaDjango.apps.about.views import contact, history
 
 urlpatterns = [
-    path('', contact),
+    path('contact', contact),
+    path('history', history)
 ]
