@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from ProyectoPruebaDjango.apps.about import views as about_views
+#from about_views import AboutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',TemplateView.as_view(template_name='homepage.html')), #redirge dirctamente a view html
+    path('home/',TemplateView.as_view(template_name='homepage.html')), #redirge dirctamente a view html (class-based view basica para mostrar un template)
+    path('about2/', about_views.AboutView.as_view()),
+
     path('about/', about_views.contact), #llama metodo 'contact' de controlador (views) de app 'about'
     path('about_all/', include('ProyectoPruebaDjango.apps.about.urls')) #otra forma a lo anterior (importa archivo urls de app 'about')
 

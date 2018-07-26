@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import messages
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -29,4 +30,9 @@ def history(request):
 
     #cuando se pasa el diccionario como ultimo argumento, este queda disponible en el template
     #para pasar datos a multiples templates se debe declarar un procesador de contexto
-    return render(request, 'about/history.html', values_for_template)                    
+    return render(request, 'about/history.html', values_for_template)     
+
+
+# Class-base view. Herencia de clases basadas en views
+class AboutView(TemplateView):
+    template_name = "about/contact.html"
