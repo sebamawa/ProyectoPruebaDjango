@@ -5,6 +5,12 @@
     <title>Contact page app</title>
 </head>
 <body>
+    {% if messages %}
+        {% for msg in messages %}
+            <p>Mensaje flash: {{ msg.message }}</p>
+        {% endfor %}
+    {% endif %}
+
     <h1>Contact page app</h1>
 </body>
 </html>

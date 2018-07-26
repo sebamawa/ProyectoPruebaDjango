@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib import messages
+
 
 # Create your views here.
 #metodo (funcion) de controlador (view basada en metodo)
 def contact(request):
     # Content from request or database extracted here
     # and passed to the template for display
+
+    #agrega mensaje flash
+    messages.success(request, 'A llegado a la pagina de contacto!!!')
     
     return render(request, 'about/contact.html') #redirige a template de app
     #return HttpResponse('Prueba de impresion '+ request.META['REMOTE_ADDR']) #imprime directamente en pagina
