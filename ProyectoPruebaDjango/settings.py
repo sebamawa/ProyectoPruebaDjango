@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ProyectoPruebaDjango.apps.about', #app creada
+
+    'ProyectoPruebaDjango.apps.about', #app agregada
+    'ProyectoPruebaDjango.apps.categories', #app agregada
 ]
 
 MIDDLEWARE = [
@@ -77,12 +79,12 @@ WSGI_APPLICATION = 'ProyectoPruebaDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-		#'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-		#'NAME': 'django_db_prueba1',
-		#'USER': 'root',
-		#'PASSWORD': '',
+        #'ENGINE': 'django.db.backends.sqlite3',
+		'ENGINE': 'django.db.backends.mysql',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+		'NAME': 'django_db_prueba1',
+		'USER': 'root',
+		'PASSWORD': '',
     }
 }
 
