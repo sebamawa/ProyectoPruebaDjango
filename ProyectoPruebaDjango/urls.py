@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
 from django.views.generic import TemplateView
 from ProyectoPruebaDjango.apps.about import views as about_views
 from ProyectoPruebaDjango.apps.categories import views as categories_views
@@ -30,4 +30,5 @@ urlpatterns = [
 
     #urls para pruebas crud con el modelo Category (app categories)
     path('create_category/', categories_views.create),
+    path('search_category/<int:category_id>/', categories_views.search)#'search_category/', categories_views.search)
 ]
