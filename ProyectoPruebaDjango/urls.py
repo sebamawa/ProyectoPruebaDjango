@@ -28,7 +28,9 @@ urlpatterns = [
     path('about/', about_views.contact), #llama metodo 'contact' de controlador (views) de app 'about'
     path('about_all/', include('ProyectoPruebaDjango.apps.about.urls')), #otra forma a lo anterior (importa archivo urls de app 'about')
 
-    #urls para pruebas crud con el modelo Category (app categories)
-    path('create_category/', categories_views.create),
-    path('search_category/<int:category_id>/', categories_views.search)#'search_category/', categories_views.search)
+    #urls para pruebas CRUD con el modelo Category (app categories). Seria mas 'prolijo' poner
+    #todas estas operaciones en el archivo urls.py de la app categories y hacer un include() como arriba con la app about
+    path('category/create', categories_views.create),
+    path('category/search/<int:category_id>/', categories_views.search), #'search_category/', categories_views.search)
+    path('category/update/<int:category_id>/', categories_views.update),
 ]

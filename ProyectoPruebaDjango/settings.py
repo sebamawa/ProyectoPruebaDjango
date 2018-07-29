@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'ProyectoPruebaDjango.apps.about', #app agregada
     'ProyectoPruebaDjango.apps.categories', #app agregada
+    'ProyectoPruebaDjango.apps.entries', #app agregada
 ]
 
 MIDDLEWARE = [
