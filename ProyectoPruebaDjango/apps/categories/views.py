@@ -52,6 +52,16 @@ def search(request, category_id):
 def update(request, category_id):
     cant = Category.objects.filter(id=category_id).update(name='Programacion general') #si no se filtrara por primay key
     # (o campo unique), se podrian recuperar varios registros y update() los actualizaria a TODOS
-    # filter() retorna un query set
+    # filter() retorna un query set (se ve uso en la siguiente view (funcion index))
     return HttpResponse("Se actualizo el nombre de: %d categoria/s" % cant)
 
+# ejemplo de uso de all(), filter() y in_builk() - para listar todas las categirias
+def index(request):
+    categories = Category.objects.all()
+    #categories = Category.objects.filter(name='PHP') #recupero categorias con filtro (SELECT ... WHERE name = "PHP")
+    #categories = Category.objects.in_bulk() #retorna un diccionario con los registros, no un queryset
+    #print(categories.query) #permite ver la consulta SQL
+    #Artificio: obtiene una lista de categorias (diccionarios) a partir del queryset de all() o filter()
+    # Esto se hace para imprimir con el HttpResponse()
+    data = [{'id': category.id, 'name': category.name} for category in categories]
+    return HttpResponse(str(data))

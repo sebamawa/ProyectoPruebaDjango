@@ -33,4 +33,5 @@ urlpatterns = [
     path('category/create', categories_views.create),
     path('category/search/<int:category_id>/', categories_views.search), #'search_category/', categories_views.search)
     path('category/update/<int:category_id>/', categories_views.update),
+    path('category/index', categories_views.index),
 ]
