@@ -6,6 +6,12 @@
 </head>
 <body>
     <h1>Form para crear categoria</h1>
-    {{ form.as_table }}
+    <form method="POST">
+        {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit form">
+    </form>
 </body>
 </html>

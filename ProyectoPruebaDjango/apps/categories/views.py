@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from ProyectoPruebaDjango.apps.categories.forms import CategoryForm
-from ProyectoPruebaDjango.apps.categories.models import Category
+from ProyectoPruebaDjango.apps.categories.models import Category, CategoryModelForm
 
 # Create your views here.
 
@@ -68,7 +68,36 @@ def index(request):
     data = [{'id': category.id, 'name': category.name} for category in categories]
     return HttpResponse(str(data))
 
-# views para trabajar con formularios
+# views para trabajar con formularios 
+
+# create
 def create_form(request):
-    form = CategoryForm()
+    # crear categoria con model form (la clase del form se guarda en models.py junto al modelo)
+    if request.method == 'POST':
+        # POST, generate form with data from request
+        form = CategoryModelForm(request.POST)
+        # check if it's valid
+        if form.is_valid():
+            # Insert into DB
+            form.save()
+            # redirect to a new URL
+            return HttpResponse('Categoria almacenada correctamente en la BD')
+    else:
+        # GET, generate unbound (blank) form
+        form = CategoryModelForm()
     return render(request, 'categories/create.html', {'form':form})
+
+# crear categoria con form standalone (independiente). La clase del form usada se guada en forms.py
+"""     if request.method == "POST":
+        # POST, generate form with data from request
+        form = CategoryForm(request.POST)
+        if form.is_valid:
+            # process data, insert into DB, generate email, etc
+
+            # redirect to a new URL
+            return HttpResponse("Categoria agregada correctamente")
+
+    else:
+        # GET, generate blank form
+        form = CategoryForm(initial={'description':'Descripcion opcional'})    
+    return render(request, 'categories/create.html', {'form':form}) """

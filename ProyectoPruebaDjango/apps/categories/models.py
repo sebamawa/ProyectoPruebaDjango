@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 # Create your models here.
 
@@ -13,5 +14,10 @@ class Category(models.Model):
 
 
 
+# form para el modelo Category
+class CategoryModelForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = '__all__'
 
       
