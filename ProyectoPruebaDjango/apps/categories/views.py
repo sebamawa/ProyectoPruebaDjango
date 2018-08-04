@@ -1,6 +1,8 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from ProyectoPruebaDjango.apps.categories.forms import CategoryForm
 from ProyectoPruebaDjango.apps.categories.models import Category
 
 # Create your views here.
@@ -65,3 +67,8 @@ def index(request):
     # Esto se hace para imprimir con el HttpResponse()
     data = [{'id': category.id, 'name': category.name} for category in categories]
     return HttpResponse(str(data))
+
+# views para trabajar con formularios
+def create_form(request):
+    form = CategoryForm()
+    return render(request, 'categories/create.html', {'form':form})

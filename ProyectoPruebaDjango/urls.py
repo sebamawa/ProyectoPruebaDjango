@@ -34,4 +34,7 @@ urlpatterns = [
     path('category/search/<int:category_id>/', categories_views.search), #'search_category/', categories_views.search)
     path('category/update/<int:category_id>/', categories_views.update),
     path('category/index', categories_views.index),
+
+    #paths para trabajar con formularios de categorias
+    path('category/create_form', categories_views.create_form)
 ]
