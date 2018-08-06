@@ -20,4 +20,21 @@ class CategoryModelForm(forms.ModelForm):
         model = Category
         fields = '__all__'
 
+        # atributos secundarios
+        labels = {
+            'name': 'Nombre de la categoria:',
+            'description': 'Descripción'
+        }
+
+        help_texts = {
+            'name': 'Ingrese un nombre de categoria los mas descriptivo posible'
+        }
+
+        error_messages = {
+            'name': {
+                'max_length': "El nombre no puede tener mas de 30 caracateres"
+            }
+        }
+
+
       

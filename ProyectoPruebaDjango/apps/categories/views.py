@@ -75,7 +75,8 @@ def create_form(request):
     # crear categoria con model form (la clase del form se guarda en models.py junto al modelo)
     if request.method == 'POST':
         # POST, generate form with data from request
-        form = CategoryModelForm(request.POST)
+        form = CategoryModelForm(request.POST) #se instancia el form con los datos enviados por el
+                            # usuario por si se debe reenviar al mismo con los datos por no ser validado
         # check if it's valid
         if form.is_valid():
             # Insert into DB
