@@ -36,5 +36,8 @@ urlpatterns = [
     path('category/index', categories_views.index),
 
     #paths para trabajar con formularios de categorias
-    path('category/create_form', categories_views.create_form)
+    path('category/create_form', categories_views.create_form),
+
+    # paths para CRUD con el modelo Entry (class-based view)
+    path('entry/', include('ProyectoPruebaDjango.apps.entries.urls'))
 ]
