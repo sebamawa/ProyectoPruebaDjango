@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Entradas</title>
+</head>
+<body>
+    <h1>Lista de Entradas</h1>
+
+    <ul>
+        {% for entry in object_list %}
+            <li>{{ entry.name }} - {{ entry.category }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -36,3 +36,4 @@ def history(request):
 # Class-base view. Herencia de clases basadas en views
 class AboutView(TemplateView):
     template_name = "about/contact.html"
+
