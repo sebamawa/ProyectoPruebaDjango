@@ -10,7 +10,7 @@ class Category(models.Model):
     #objects = models.Manager() #Added by default, not required explicitly
 
     def __str__(self):
-        return "Name: %s - Category: %s" % (self.name, self.description)
+        return self.name
 
 
 
