@@ -10,6 +10,9 @@ class Entry(models.Model):
     description = models.TextField()
     date = models.DateField(auto_now_add=True)
 
+    # def __str__(self):
+    #     return self.name
+
 class EntryModelForm(forms.ModelForm):
     class Meta:
         model = Entry

@@ -24,5 +24,5 @@ class Post(models.Model):
     class Meta:
         ordering = ('-publish',) #descending order by default when we query the database
 
-        def __str__(self):
-            return self.title
+    def __str__(self):
+        return self.title
