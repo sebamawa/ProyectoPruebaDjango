@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'ProyectoPruebaDjango.apps.about', #app agregada
     'ProyectoPruebaDjango.apps.categories', #app agregada
     'ProyectoPruebaDjango.apps.entries', #app agregada
+    #apps para la app blog del libro Django 2 by Example
+    'ProyectoPruebaDjango.apps.posts', #app agregada
 ]
 
 MIDDLEWARE = [

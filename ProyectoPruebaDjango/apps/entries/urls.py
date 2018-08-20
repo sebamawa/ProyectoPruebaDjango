@@ -1,5 +1,6 @@
 from django.urls import path
-from ProyectoPruebaDjango.apps.entries.views import EntryCreateView, EntryListView
+# from ProyectoPruebaDjango.apps.entries.views import EntryCreateView, EntryListView
+from .views import EntryCreateView, EntryListView
 
 app_name = 'entries'
 urlpatterns = [

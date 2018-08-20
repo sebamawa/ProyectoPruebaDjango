@@ -13,8 +13,9 @@ def index (request):
 class EntryCreateView(CreateView):
     model = Entry
     form_class = EntryModelForm
-    success_url = '/category/create' #reverse_lazy('entries:index')
+    success_url = '/create' #reverse_lazy('entries:index')
 
+# ListView (Class-based view)
 class EntryListView(ListView):
     model = Entry
 

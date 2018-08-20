@@ -18,6 +18,7 @@ from django.urls import path, re_path, include
 from django.views.generic import TemplateView
 from ProyectoPruebaDjango.apps.about import views as about_views
 from ProyectoPruebaDjango.apps.categories import views as categories_views
+#from ProyectoPruebaDjango.apps.posts import views as posts_views
 #from about_views import AboutView
 
 urlpatterns = [
@@ -39,5 +40,8 @@ urlpatterns = [
     path('category/create_form', categories_views.create_form),
 
     # paths para CRUD con el modelo Entry (class-based view)
-    path('entry/', include('ProyectoPruebaDjango.apps.entries.urls'))
+    path('entry/', include('ProyectoPruebaDjango.apps.entries.urls')),
+
+    # paths para aplicacion de blog (libro Django 2 by example)
+    path('blog/', include('ProyectoPruebaDjango.apps.posts.urls')),
 ]
